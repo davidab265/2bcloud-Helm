@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: {{ Values.image_name }} 
+        image: {{ Values.image }} 
         ports:
         - containerPort: 3000
         resources:

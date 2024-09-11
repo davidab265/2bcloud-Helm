@@ -2,4 +2,4 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-image_name: mcr.microsoft.com/mcr/hello-world davids.azurecr.io/samples/gpt-human:1
+image: davids.azurecr.io/samples/gpt-human:1.0.0
