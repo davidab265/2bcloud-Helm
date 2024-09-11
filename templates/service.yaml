@@ -1,15 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "gpt-human-app.fullname" . }}
-  labels:
-    {{- include "gpt-human-app.labels" . | nindent 4 }}
+  name: my-app-service
 spec:
-  type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
   selector:
-    {{- include "gpt-human-app.selectorLabels" . | nindent 4 }}
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 80    # Exposing on port 80
+      targetPort: 3000 # Targeting the container's port 3000
+  type: LoadBalancer # Or NodePort if you want to expose it differently
